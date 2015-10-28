@@ -1,0 +1,367 @@
+1  1  6789 2  2  4   
+1  0  0  0  5000  5   
+100  2700  4000  1000  4  150  60   
+1000 1500  30  100  0.30  1   
+0.90  5  0.90  5  10  0.05   
+80  1000  30  50  0  0  140  
+0.4  400  30.0  5.0  0.5  1.0  0.5   
+0.2  30.0  0.5  1.0  30.0  30.0  
+0.05  0.005   2.0  4.0  0.5  30   
+40  10  1.0  2.0  0.2   
+30.0  1.0  1.0  0.99  0.9  0.99   
+140  300  2  200  4.0  1.0  4.0   
+10.0  120  1.2   125  0.3  0.28   
+1.0  1.0  4.0  4.0  1.5  5.0   
+80.0  1.0  125  10.0  1.8   
+3.0  2.5  2.0  1.0  6.0   
+100  1.0  300  300  300   
+1.0  1.0  1.0  1.0  0.5
+1.0  1.0  1.0  1.0  100.0  200.0   
+3  1   
+150  550  300  550  300  0.0  40.0  1400.0  4.0
+150  700 -200  700 -200  0.0  40.0  1400.0  4.0
+150  850  150  850  150  0.0  40.0  1400.0  4.0
+350  280  -230  280  -230  3000  70.0  7000  2.0         
+350  280  -230  280  -230  3150  50.0  7000  2.0   
+650  280  -230  280  -230  3220  50.0  7000  2.0   
+650  280  -230  280  -230  3330  50.0  7000  2.0   
+
+
+-----------------------------------------------------------------------------  
+
+EXPLANATION OF THE INPUT PARAMETERS  
+
+Update: Sept 10, 2014. 
+
+1. comptype,srchtype,rndtype,writtype,outfreq,lbradius  
+2. screenout,lrestore,mediumreprod,weakr,nrmax,nm 
+3. timmst,tbirth,tmax,xmax,nsubint,r0,r0s  
+4. rcell,rblgr,tlifeb0,tlifmem0,pmem,blkill 
+5. crnew,rminnew,crspread,rminsprd,drwidth,tau_sel_bcell0
+6. thrad,pxmax,rminth,rmaxth,epepx,epepy,rminb 
+7. pmut,taum0,taubm0,taub0,tauba0,taubr0,bcell_tau_stress_control0
+8. taubil0,taudil0,tauab0,taubab0,taudab0,tauthm0  
+9. tauthymus0,thccthn1,tauth0,etaccthn1,tauthr0,tlifeth0
+10. sreprod_crit,dring,tcrit_il,tcrit_stress,tau_prodil10
+11. taudil10,tauil10,tauil0,negselp,posselp,bcellselp
+12. thnm,thnmb,thparalize1,thparalize2,etanm,etanmb,etaparalize 
+13. thd,thr,thccb,thwd,tkill0,tbdiv0
+14. etad,etar,etaccb,etawd,etapselt,etanselt
+15. thba,thil,thwdth,thpth,thccth 
+16. etaba,etail,etawdth,etapth,etaccth 
+17. thdth,thilth,thnmth,thnmpos,thnmneg  
+18. etadth,etailth,etanmth,tcell_tcrit_il1,tcell_tau_stress_control0 
+19. kth0,kth1,kth2,kb0,kb1,kb2 
+20. nwtypes,nrtypes
+21. nw,xw,yw,wpepx,wpepy,t0w,tauw,thnw,etanw    
+22. nr,xr,yr,rpepx,rpepy,t0r,taur,thnr,etanr  
+
+1-----------------------
+
+comptype: 0: ERS model; 1: CRS model (switching off the positive selection with the setting rminth=rmaxth)
+
+srchtype = 0: the B cell offsprings are distributed on an 'annulus'; 1: the B cell offsprings are distributed on a 'disc' (in fact, on a square).  
+
+rndtype  = 0: a 'randomize' call followed by 100 'random' calls before simulation (the experiment is not reproducible); > 0: the number of 'random' calls before simulation (the experiment is reproducible, different numbers result in different experiments).  
+
+writtype = 0: short output, containing only the total numbers of cells as they change in time; 1: medium output, it also contains the parameters of all B cells and T cells; 2: it also contains the out2 file
+
+outfreq: the number of cells are output at time instants divisible by outfreq.  
+
+lbradius = 0: the radius of each B cell is the same r_0; = 1: same as 0, except for the region where the B cell offspring is spread depends on the distance of attack d; = 2: the radius of each B cell is changing during affinity maturation between 0 and r_0, but the spread radius is always r_0s; = 3: the radius of each B cell is changing during affinity maturation between 0 and the actual radius, but the spread radius is always r_0s; > 3: the radius of each B cell is changing during hypermutation.  
+
+2-----------------------
+
+screenout = 0: real time screen out is off; = 1: real time screenout on.
+
+lrestore: not in use 
+
+mediumreprod = 0: medium reproduction off; =1: medium reproduction on.
+
+weakr = 0: weak reproduction of T-cells is off; = 1:  weak reproduction of T-cells is on.
+
+nrmax: the maximum number of red cells, the simulation stops upon reaching this value.  
+
+nm: the number of initial bone marrow cells at the 'turn on' of the immune system.  
+
+3-----------------------
+
+timmst: the starting time of the immune system.  
+
+tbirth: not in use
+
+tmax: the last time instant of the simulation.  
+
+xmax: the size of the edges of the configuration square.  
+
+nsubint: the number of subintervals along the edges of the configuration square. These subintervals define the considered subrectangles.  
+
+r0: the radius of the native B cells.  
+
+r0s: the radius of spreading offspring B cells.  
+
+4-----------------------
+
+rcell: the radius of the 'complete' neighborhood of a B cell.  
+
+rblgr: the maximal radius of a B cell to get listed among the 'dangerous' ones (green domain).  
+
+tlifeb0: the expectation of the lifelength of a B cell. 
+
+tlifmem: the expectation of the lifelength of a memory B cell.  
+
+pmem: the probability of transforming a mature B cell into memory cell (instead of plasma cell).  
+
+blkill = 0: B cells are not killed at the actions of B cells; = 1: B cells are killed as well.  
+
+5-----------------------
+
+crnew: the coefficient of the radius function that determines the radius of an offspring of a B cell.  
+
+rminnew: the minimum radius of an offspring of a B cell.  
+
+crspread: the coefficient of the radius function that determines the rectangle over which the offsprings of a B cell are spread.  
+
+rminsprd: the minimum radius of the rectangle over which the offsprings are spread.  
+
+drwidth: the half-width of the the 'annulus' over which the offsprings are spread when srchtype=0.             
+
+tau_sel_bcell: the expectation of the waiting time for a B helper cell to enter the bone marrow.
+
+6-----------------------
+
+thrad: the radius of T helper cells.  
+
+pxmax: the maximal coordinate in the peptide universe.  
+
+rminth: the threshold radius of the negative selection.  
+
+rmaxth: the threshold radius of the positive selection.  
+
+epepx: the x coordinate of the empty MHCII in the peptide universe.  
+
+epepy: he y coordinate of the empty MHCII in the peptide universe. 
+
+rminb: the threshold radius of selection of B cells in the bone marrow.
+
+7----------------------- 
+
+pmut: the probability of mutation at B cell reproduction.   
+
+taum0: the expectation of the waiting time between two divisions of a bone marrow cell.  
+
+taubm0: the expectation of the waiting time between two births of native B cells in the bone marrow.  
+
+taub0: the expectation of the waiting time between two actions of a free B cell.  
+
+tauba0: the expectation of the waiting time while a B cell or an antibody is being attached to an antigen (not in use yet).
+
+taubr0: the expectation of the waiting time while a B cell is reproducing.  
+
+bcell_tau_stress_control0: the expectation of the waiting time between two stress state checking of a B cell
+
+8---------------------
+
+taubil0: the expectation of the waiting time between the births of interleukin 2.  
+
+taudil0: the expectation of the waiting time between the deaths of  interleukin 2.  
+
+tauab0: the expectation of the waiting time between two actions of an antibody.  
+
+taubab0: the expectation of the waiting time between two births of antibody.  
+
+taudab0: the expectation of the waiting time between two deaths of  antibody.  
+
+tauthm0: the expectation of the waiting time between two births of T helper cells in the bone marrow.  
+
+9-----------------------
+
+tauthymus0: the expectation of the waiting time for a T helper cell to enter the thymus.
+
+thccthn1: the coefficient of the upper bound (theta) parameter of the concentration of T cells in the 'local' neighborhood of T helper cells. This coefficient multiplies the actual number of bone marrow cells.  
+
+tauth0: the expectation of the waiting time between two actions of a free T helper cell.  
+
+etaccthn1: the exponent (eta) parameter of the concentration of T cells in the 'local' neighborhood of T helper cells.  
+
+tauthr0: the expectation of the waiting time while a T helper cell is reproducing.  
+
+tlifeth0: the expectation of the life length of a T helper cell. 
+
+10-----------------------
+
+sreprod_crit: the threshold radius of the strong reproduction.
+
+dring: the radius in which the number of T-cells are restricted.
+
+tcrit_il: the critical time between the arrivals of two interleukin 2 at a given B cell. A B cell is allowed to reproduce only if it gets an interleukin 2 within this critical time.
+
+tcrit_stress: the critical time between two T helper cells' touch on a given MHCII. A B cell is allowed to reproduce only if it gets T cell visitor within this critical time.
+
+tau_prodil10: the expectation of the waiting time between two births of interleukin 1.
+
+11-----------------------
+
+taudil10: the expectation of the waiting time between two death of interleukin 1.
+
+tauil10: the attack rate of an interleukin 1.
+
+tauil0: the attack rate of an interleukin 2.
+
+negselp: the threshold probability of the negative selection.
+
+posselp: the threshold probability of the positive selection.
+
+bcellselp: the threshold probability of negative selection of B cells in the bone marrow.
+
+12-----------------------
+
+thnm: the upper bound (theta) parameter of the number of bone marrow  cells.  
+
+thnmb: the upper bound (theta) parameter of the number of bone marrow cells at the production of naive B cells. 
+
+thparalize1: the lower bound (theta) parameter of the objects region before which B cell is insensitive.
+
+thparalize2: the upper bound (theta) parameter of the objects region after which B cell is paralyzed.
+
+etanm: the exponent (eta) parameter of the number of bone marrow cells.  
+
+etanmb: the exponent (eta) parameter of the number of bone marrow cells at the production of native B cells. 
+
+etaparalize: the exponent (eta) parameter of the paralysis 
+
+13-----------------------
+
+thd: the upper bound (theta) parameter of the distance between a B cell and an object.  
+
+thr: the upper bound (theta) parameter of the radius of a B cell.  
+
+thccb: the coefficient of the upper bound (theta) parameter of the concentration of B cells in the 'complete' neighborhood of a B cell. This coefficient multiplies the actual number of bone marrow cells.  
+
+thwd: the upper bound (theta) parameter of the distance in the weight coefficient of an object.  
+
+tkill0: the attachment time threshold of killing a target by a B cell or antibody.  
+
+tbdiv0: the attachment time threshold of B cell division (not in use yet).
+
+14----------------------- 
+
+etad: the exponent (eta) parameter of the distance between a B cell and an object.  
+
+etar: the exponent (eta) parameter of the radius of a B cell.  
+
+etaccb: the exponent (eta) parameter of the concentration of B cells in the 'complete' neighborhood of a B cell.  
+
+etawd: the exponent (eta) parameter of the distance in the weight coefficient of an object.   
+
+etapselt: the exponent (eta) parameter of positive selection of naive T helper cells.  
+
+etanselt: the exponent (eta) parameter of negative selection of naive T helper cells.  
+
+15----------------------- 
+
+thba: the upper bound (theta) parameter applied to the number of objects when computing the probability of attaching a B cell to some antigen.  
+
+thil: the upper bound (theta) parameter applied to the number of interleukins when computing the probability of B cell reproduction. -> not in use 
+
+thwdth: the upper bound (theta) parameter of the distance of a peptide in the weight coefficient when attaching to a T helper cell.  
+
+thpth: the upper bound (theta) parameter applied to the number of peptides when computing the probability of attaching a T helper cell to some MHC II plus peptide.  
+
+thccth: the coefficient of the upper bound (theta) parameter of the concentration of T cells in the 'complete' neighborhood of T helper cells. This coefficient multiplies the actual number of bone marrow cells.  
+
+16----------------------- 
+
+etaba: the exponent (eta) parameter applied to the number of objects when computing the probability of attaching a B cell to some antigen.  
+
+etail: the exponent (eta) parameter applied to the number of interleukins when computing the probability of B cell reproduction.  
+
+etawdth: the exponent (eta) parameter of the distance of a peptide in the weight coefficient when attaching to a T helper cell.  
+
+etapth: the exponent (eta) parameter of the applied to the number of peptides when computing the probability of attaching a T helper cell to some MHC II plus peptide.  
+
+etaccth: the exponent (eta) parameter of the concentration of T cells in the 'complete' neighborhood of T helper cells. 
+
+17----------------------- 
+
+thdth: the upper bound (theta) parameter in the distance of a peptide from a T helper cell.  
+
+thilth: the upper bound (theta) parameter applied to the number of interleukins when computing the probability of a T helper cell reproduction.  -> not in use
+
+thnmth: the upper bound (theta) parameter number of bone marrow cells at the production of naive T helper cells.  
+
+thnmpos: the upper bound (theta) parameter when computing the intensity of positive selection in terms of bone marrow cells.  
+
+thnmneg: the upper bound (theta) parameter when computing the intensity of negative selection in terms of bone marrow cells.  
+
+18----------------------- 
+
+etadth: the exponent (eta) parameter of the in the distance of a peptide from a T helper cell.  
+
+etailth: the exponent (eta) parameter applied to the number of interleukins when computing the probability of a T helper cell reproduction.  
+
+etanmth: the exponent (eta) parameter of the number of bone marrow cells at the production of naive T helper cells.  
+
+tcell_tcrit_il1: the critical time between the arrivals of two interleukin 1 at a given Th cell. 
+
+tcell_tau_stress_control0: tau parameter of the Th stress control process.
+
+19----------------------- 
+
+kth0: multiplier of Th weak reproduction
+
+kth1: multiplier of Th medium reproduction
+
+kth2: multiplier of Th strong reproduction
+
+kb0: multiplier of B weak reproduction
+
+kb1: multiplier of B medium reproduction
+
+kb2: multiplier of B strong reproduction
+
+20-----------------------
+
+nwtypes: the number of types of white (self) cells.   
+
+nrtypes: the number of types of red (non-self) cells.  
+
+21----------------------- 
+
+nw: the initial number of a type of white cells.  
+
+xw: the x-coordinate of a type of white cells.   
+
+w: the y-coordinate of a type of white cells.   
+
+wpepx: the x-coordinate of a peptide resulting from the given type of white cells.  
+
+wpepy: the y-coordinate of a peptide resulting from the given type of white cells.  
+
+t0w: the 'turn-on' time of a type of white cells.   
+
+tauw0: the expectation of the waiting time between two divisions of a type of white cells.  
+
+thnw: the upper bound (theta) parameter of the number of a type of white cells.  
+
+etanw: the exponent (eta) parameter of the number of a type of white cells.  
+
+22----------------------- 
+
+nr: the initial number of a type of red cells.  
+
+xr: the x-coordinate of a type of red cells.   
+
+yr: the y-coordinate of a type of red cells.   
+
+rpepx: the x-coordinate of a peptide resulting from the given type of red cells.  
+
+rpepy: the y-coordinate of a peptide resulting from the given type of red cells.  
+
+t0r: the 'turn-on' time of a type of red cells.  
+
+taur0: the expectation of the waiting time between two divisions of a type of red cells.  
+
+thnr: the upper bound (theta) parameter of the number of a type of red cells.  
+
+etanr: the exponent (eta) parameter of the number of a type of red cells. 
