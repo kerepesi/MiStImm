@@ -32,30 +32,31 @@
 *** Quick start for Windows step by step ***
 
 1. Run MiStImm_dec17_2014.exe
-2. Run indrawc-2014-08-07.exe 
+2. Run indrawc-2016-07-23.exe 
 3. Choose an outdat-<number> file from the opened menu by typing its number, for example: "3".
-4. For the time diagram in a bird's eye view choose the option 1 ("Time diagram") by typing "1" then make the following settings: 
+4. Choose background color (w/b). For example "b" (black). 
+5. For the time diagram in a bird's eye view choose the option 1 ("Time diagram") by typing "1" then make the following settings: 
 	- First time instant = 0
 	- Last time instant = 4000
 	- Time step = 8
 	- Vertical unit = 4000
 	- Delay = 1. 
-5. Press "Enter" and then choose the option "1" ("actual file again")
-6. For the time diagram in a closer view choose "1" ("Time diagram") then make the following settings: 
+6. Press "Enter" and then choose the option "1" ("actual file again")
+7. For the time diagram in a closer view choose "1" ("Time diagram") then make the following settings: 
 	- First time instant = 2900
 	- Last time instant = 4000
 	- Time step = 2
 	- Vertical unit = 200
 	- Delay = 1
-7. Press "Enter" and then choose the option "1" ("actual file again")
-8. For the developing antigen lattice or the developing peptide lattice choose option "2" or "5", respectively. 
+8. Press "Enter" and then choose the option "1" ("actual file again")
+9. For the developing antigen lattice or the developing peptide lattice choose option "2" or "5", respectively. 
 	- First time instant = 0
 	- Last time instant = 4000
 	- Plotting with (p)oints: press "p"
 	- Time step = 2
 	- Delay = 10
 	- You may freeze the screen and then start again by pressing the space bar. 
-9. Press "Enter" and then choose the option 3 ("exit")
+10. Press "Enter" and then choose the option 3 ("exit")
 
 
 *** Workflow for multiple simulation ***
@@ -77,7 +78,7 @@
 - 2-4(weakr)=1->0
 - 8-6(tauthm0)=5->30 
 
-*** Some help for indrawc-2014-08-07.exe ***
+*** Some help to indrawc_jul23_2016.exe ***
 
 - In "1. Time diagram" menu option: 
 	- one time step is 550 time unit
