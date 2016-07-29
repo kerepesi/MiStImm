@@ -31,7 +31,7 @@
 
 EXPLANATION OF THE INPUT PARAMETERS  
 
-Update: Sept 10, 2014. 
+Update: Jul 29, 2016. 
 
 1. comptype,srchtype,rndtype,writtype,outfreq,lbradius  
 2. screenout,lrestore,mediumreprod,weakr,nrmax,nm 
@@ -76,9 +76,9 @@ screenout = 0: real time screen out is off; = 1: real time screenout on.
 
 lrestore: not in use 
 
-mediumreprod = 0: medium reproduction off; =1: medium reproduction on.
+mediumreprod (medrepr) = 0: medium reproduction off; =1: medium reproduction on.
 
-weakr = 0: weak reproduction of T-cells is off; = 1:  weak reproduction of T-cells is on.
+weakr (weakrepr) = 0: weak reproduction of T-cells is off; = 1:  weak reproduction of T-cells is on.
 
 nrmax: the maximum number of red cells, the simulation stops upon reaching this value.  
 
@@ -106,7 +106,7 @@ rcell: the radius of the 'complete' neighborhood of a B cell.
 
 rblgr: the maximal radius of a B cell to get listed among the 'dangerous' ones (green domain).  
 
-tlifeb0: the expectation of the lifelength of a B cell. 
+tlifeb0 (tlifeb): the expectation of the lifelength of a B cell. 
 
 tlifmem: the expectation of the lifelength of a memory B cell.  
 
@@ -126,7 +126,7 @@ rminsprd: the minimum radius of the rectangle over which the offsprings are spre
 
 drwidth: the half-width of the the 'annulus' over which the offsprings are spread when srchtype=0.             
 
-tau_sel_bcell: the expectation of the waiting time for a B helper cell to enter the bone marrow.
+tau_sel_bcell (tauselb): the expectation of the waiting time for a B helper cell to enter the bone marrow.
 
 6-----------------------
 
@@ -148,71 +148,71 @@ rminb: the threshold radius of selection of B cells in the bone marrow.
 
 pmut: the probability of mutation at B cell reproduction.   
 
-taum0: the expectation of the waiting time between two divisions of a bone marrow cell.  
+taum0 (taum): the expectation of the waiting time between two divisions of a bone marrow cell.  
 
-taubm0: the expectation of the waiting time between two births of native B cells in the bone marrow.  
+taubm0 (taubm): the expectation of the waiting time between two births of native B cells in the bone marrow.  
 
-taub0: the expectation of the waiting time between two actions of a free B cell.  
+taub0 (taub): the expectation of the waiting time between two actions of a free B cell.  
 
 tauba0: the expectation of the waiting time while a B cell or an antibody is being attached to an antigen (not in use yet).
 
 taubr0: the expectation of the waiting time while a B cell is reproducing.  
 
-bcell_tau_stress_control0: the expectation of the waiting time between two stress state checking of a B cell
+bcell_tau_stress_control0 (taubstress): the expectation of the waiting time between two stress state checking of a B cell
 
 8---------------------
 
-taubil0: the expectation of the waiting time between the births of interleukin 2.  
+taubil0 (taubil): the expectation of the waiting time between the births of interleukin 2.  
 
-taudil0: the expectation of the waiting time between the deaths of  interleukin 2.  
+taudil0 (taudil): the expectation of the waiting time between the deaths of  interleukin 2.  
 
-tauab0: the expectation of the waiting time between two actions of an antibody.  
+tauab0 (tauab): the expectation of the waiting time between two actions of an antibody.  
 
-taubab0: the expectation of the waiting time between two births of antibody.  
+taubab0 (taubab): the expectation of the waiting time between two births of antibody.  
 
-taudab0: the expectation of the waiting time between two deaths of  antibody.  
+taudab0 (taudab): the expectation of the waiting time between two deaths of  antibody.  
 
-tauthm0: the expectation of the waiting time between two births of T helper cells in the bone marrow.  
+tauthm0 (tauthm): the expectation of the waiting time between two births of T helper cells in the bone marrow.  
 
 9-----------------------
 
-tauthymus0: the expectation of the waiting time for a T helper cell to enter the thymus.
+tauthymus0 (tauthymus): the expectation of the waiting time for a T helper cell to enter the thymus.
 
 thccthn1: the coefficient of the upper bound (theta) parameter of the concentration of T cells in the 'local' neighborhood of T helper cells. This coefficient multiplies the actual number of bone marrow cells.  
 
-tauth0: the expectation of the waiting time between two actions of a free T helper cell.  
+tauth0 (tauth): the expectation of the waiting time between two actions of a free T helper cell.  
 
 etaccthn1: the exponent (eta) parameter of the concentration of T cells in the 'local' neighborhood of T helper cells.  
 
 tauthr0: the expectation of the waiting time while a T helper cell is reproducing.  
 
-tlifeth0: the expectation of the life length of a T helper cell. 
+tlifeth0 (tlifeth): the expectation of the life length of a T helper cell. 
 
 10-----------------------
 
-sreprod_crit: the threshold radius of the strong reproduction.
+sreprod_crit (sreprcrit): the threshold radius of the strong reproduction.
 
 dring: the radius in which the number of T-cells are restricted.
 
-tcrit_il: the critical time between the arrivals of two interleukin 2 at a given B cell. A B cell is allowed to reproduce only if it gets an interleukin 2 within this critical time.
+tcrit_il (tcritilb): the critical time between the arrivals of two interleukin 2 at a given B cell. A B cell is allowed to reproduce only if it gets an interleukin 2 within this critical time.
 
-tcrit_stress: the critical time between two T helper cells' touch on a given MHCII. A B cell is allowed to reproduce only if it gets T cell visitor within this critical time.
+tcrit_stress (tcritth): the critical time between two T helper cells' touch on a given MHCII. A B cell is allowed to reproduce only if it gets T cell visitor within this critical time.
 
 tau_prodil10: the expectation of the waiting time between two births of interleukin 1.
 
 11-----------------------
 
-taudil10: the expectation of the waiting time between two death of interleukin 1.
+taudil10 (taudil1): the expectation of the waiting time between two death of interleukin 1.
 
-tauil10: the attack rate of an interleukin 1.
+tauil10 (tauil1): the attack rate of an interleukin 1.
 
-tauil0: the attack rate of an interleukin 2.
+tauil0 (tauil): the attack rate of an interleukin 2.
 
 negselp: the threshold probability of the negative selection.
 
 posselp: the threshold probability of the positive selection.
 
-bcellselp: the threshold probability of negative selection of B cells in the bone marrow.
+bcellselp (bselp): the threshold probability of negative selection of B cells in the bone marrow.
 
 12-----------------------
 
@@ -302,9 +302,9 @@ etailth: the exponent (eta) parameter applied to the number of interleukins when
 
 etanmth: the exponent (eta) parameter of the number of bone marrow cells at the production of naive T helper cells.  
 
-tcell_tcrit_il1: the critical time between the arrivals of two interleukin 1 at a given Th cell. 
+tcell_tcrit_il1 (tthcrit): the critical time between the arrivals of two interleukin 1 at a given Th cell. 
 
-tcell_tau_stress_control0: tau parameter of the Th stress control process.
+tcell_tau_stress_control0 (tauthstress): tau parameter of the Th stress control process.
 
 19----------------------- 
 
@@ -340,7 +340,7 @@ wpepy: the y-coordinate of a peptide resulting from the given type of white cell
 
 t0w: the 'turn-on' time of a type of white cells.   
 
-tauw0: the expectation of the waiting time between two divisions of a type of white cells.  
+tauw0 (tauw): the expectation of the waiting time between two divisions of a type of white cells.  
 
 thnw: the upper bound (theta) parameter of the number of a type of white cells.  
 
