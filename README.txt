@@ -17,7 +17,7 @@
 - How to cite: If you publish anything using MiStimm, you are asked to cite the following publication:
 - T. Szabados, G. Tusnády, C. Kerepesi, T. Bakács: "A microscopic stochastic model of the adaptive humoral immune development process", arxiV preprint, arXiv: 1507.00950, 2015.
 
-***Short introduction: the main ingredients***
+***Short introduction: the main parts***
 
 1. MiStImm_dec17_2014: A C program and an exe file for simulating the microscopic stochastic model of the humoral immune development.
 2. indat1: A text file containing the input parameters of the above MiStImm_dec17_2014 program and their short explanations.
@@ -59,7 +59,9 @@
 10. Press "Enter" and then choose the option 3 ("exit")
 
 
-*** Workflow for multiple simulation ***
+*** Workflow for multiple simulation (in Windows cmd) ***
+
+- Requirements: Install Perl for Windows if it needed (e.g. http://strawberryperl.com/)
 
 - delete all earlier output files from the start directory
 - perl Multirun.pl
