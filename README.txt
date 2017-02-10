@@ -65,9 +65,9 @@
 
 - delete all earlier output files from the start directory
 - perl Multirun.pl
-- create an out directory (e.q.: md ERS-nr350-div50)
-- mv outdat-* CRS-nr350-div50
-- mv out2-* CRS-nr350-div50
+- create an out directory (e.q.: md CRS-nr350-div50)
+- move outdat-* CRS-nr350-div50
+- move out2-* CRS-nr350-div50
 - cd CRS-nr350-div50
 - dir /b outdat-* > CRS-nr350-div50-outdatlist.txt
 - perl ..\AnalyzerOutdat.pl CRS-nr350-div50-outdatlist.txt 50
