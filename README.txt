@@ -80,6 +80,15 @@
 - 2-4(weakr)=1->0
 - 8-6(tauthm0)=5->30 
 
+*** Computing the Fisher's exact p-values ***
+
+- download R for Windows (https://cran.r-project.org/bin/windows/base/)
+- fisher.test(rbind(c(75,66),c(425,434)))$p.value
+- fisher.test(rbind(c(307,225),c(193,275)))$p.value
+- fisher.test(rbind(c(487,400),c(13,100)))$p.value
+- fisher.test(rbind(c(134,135),c(366,365)))$p.value
+- fisher.test(rbind(c(448,310),c(52,190)))$p.value
+
 *** Some help to indrawc_jul23_2016.exe ***
 
 - In "1. Time diagram" menu option: 
