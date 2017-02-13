@@ -83,11 +83,16 @@
 *** Computing the Fisher's exact p-values ***
 
 - download R for Windows (https://cran.r-project.org/bin/windows/base/)
-fisher.test(rbind(c(75,66),c(425,434)), alternative="great")$p.value
+#Package info: https://stat.ethz.ch/R-manual/R-devel/library/stats/html/fisher.test.html
+Ratio <-
+matrix(c(307, 225, 193, 275),
+       nrow = 2,
+       dimnames =
+       list(c("Win", "Loss"),
+            c("ERS", "CRS")))
+fisher.test(Ratio,  alternative = "greater")
+#Simplier version:
 fisher.test(rbind(c(307,225),c(193,275)), alternative="great")$p.value
-fisher.test(rbind(c(487,400),c(13,100)), alternative="great")$p.value
-fisher.test(rbind(c(134,135),c(366,365)), alternative="less")$p.value
-fisher.test(rbind(c(448,310),c(52,190)), alternative="great")$p.value
 
 *** Some help to indrawc_jul23_2016.exe ***
 
