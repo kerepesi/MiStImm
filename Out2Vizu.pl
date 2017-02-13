@@ -3,7 +3,7 @@
 #1: start
 #2: end
 #3: step
-#Typical running command: perl Out2Vizu.pl out2-1400092876 0 3500 100 area > ki
+#Typical running command: perl Out2Vizu.pl out2-1400092876 0 3500 100 line > out.html
 my %sum_reprod=();
 my %num_reprod_type=();
 my $num_reprod_type=0;
