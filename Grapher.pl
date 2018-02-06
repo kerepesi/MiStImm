@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 open (IN, $ARGV[0]) || die "Can't open $ARGV[0]";
 open (OUT, ">", "$ARGV[0].csv");
-print OUT "t;selfs;non-selfs;Bcells;antibodies;Tcells;interleukins;bone marrows\n";
+print OUT "t;self cells;B cells;Th cells;danger signals and interleukins;bone marrow cells\n";
 while (<IN>) {
 	if ($_ =~ /t=\s+(\S+)\s+nW=\s+(\S+)\s+nR=\s+(\S+)\s+nB=\s+(\S+)\s+nAb=\s+(\S+)\s+nTh=\s+(\S+)\s+nIL=\s+(\S+)\s+nM=\s+(\S+)/ ) {
 		#print $_;

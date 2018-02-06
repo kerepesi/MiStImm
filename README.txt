@@ -4,18 +4,13 @@
 ***************************
 
 - This program package (MiStImm - Microscopic Stochastic Immun System Simulation Software) is developed by Csaba Kerepesi, Tamás Szabados, Gábor Szabados, Tamás Kiss, Kristóf Hörömpöly, Endre Szecsei.
-- For any support and contact please write here: kerepesi@sztaki.hu (Csaba Kerepesi)
+- For any support and contact please write here: kerepesi@info.ilab.sztaki.hu (Csaba Kerepesi)
 
 ***Licence***
 
 - MiStImm is a free software: you may redistribute it and/or modify its under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or any later version.
 - MiStImm are distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details (http://www.gnu.org/licenses/).
-- For any other inquiries send an email to Csaba Kerepesi: kerepesi@sztaki.hu
-
-***Requirements***
-
-- MiStimm executables work on Windows operation system (tested: Windows 7, Windows Vista)
-- Compiling of the C code works properly on Windows using the Dev-C++ software (http://orwelldevcpp.blogspot.hu/)
+- For any other inquiries send an email to Csaba Kerepesi: kerepesi@info.ilab.sztaki.hu
 
 ***How to cite***
 
@@ -70,13 +65,13 @@
 
 - delete all earlier output files from the start directory
 - perl Multirun.pl
-- create an out directory (e.q.: md CRS-nr350-div50)
-- move outdat-* CRS-nr350-div50
-- move out2-* CRS-nr350-div50
-- cd CRS-nr350-div50
-- dir /b outdat-* > CRS-nr350-div50-outdatlist.txt
-- perl ..\AnalyzerOutdat.pl CRS-nr350-div50-outdatlist.txt 50
-- perl ..\CountStat.pl CRS-nr350-div50-outdatlist.txt-AnalyzerOutdat-50.txt
+- create an out directory (e.q.: md ERS-nr350-div50)
+- move outdat-* ERS-nr350-div50
+- move out2-* ERS-nr350-div50
+- cd ERS-nr350-div50
+- dir /b outdat-* > ERS-nr350-div50-outdatlist.txt
+- perl ..\AnalyzerOutdat.pl ERS-nr350-div50-outdatlist.txt 50
+- perl ..\CountStat.pl ERS-nr350-div50-outdatlist.txt-AnalyzerOutdat-50.txt
 
 *** Indat1 changes to convert ERS model to CRS model ***
 
