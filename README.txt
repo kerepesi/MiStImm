@@ -101,4 +101,6 @@ fisher.test(rbind(c(307,225),c(193,275)), alternative="great")$p.value
 	- the program draws 4.5 vertical units
 	- choose time step 1
 	
+*** Converting outdat files into three separate csv files with Outdat2CSV.py ***
 
+- python Outdat2CSV.py outdat-1518016285-1956-respERS
