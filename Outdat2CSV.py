@@ -7,16 +7,16 @@ IN_name=sys.argv[1]
 
 OUT_no_elements=open(IN_name+'-no_elements.csv', 'w')
 print(IN_name+'-no_elements.csv')
-OUT_no_elements.write('t,nW,nR,nB,nAb,nTh,nIL,nM\n')
+OUT_no_elements.write('t,self_cells,foreign_antigens,B_cells,antibodies,Thelpers,danger_signals_and_ILs,bone_marrow_cells\n')
 
 
 OUT_Thelpers=open(IN_name+'-Thelpers.csv', 'w')
 print(IN_name+'-Thelpers.csv')
-OUT_Thelpers.write('xx,yy,thpd,t1,t2\n')
+OUT_Thelpers.write('x,y,peptide_distance,t_birth,t_death\n')
 
 OUT_Bcells=open(IN_name+'-Bcells.csv', 'w')
 print(IN_name+'-Bcells.csv')
-OUT_Bcells.write('xx,yy,rr,bmat,stress,nab1,t1,t2\n')
+OUT_Bcells.write('x,y,r,maturity,stress,nab1,t_birth,t_death\n')
 
 IN=open(IN_name)
 for line in IN:
