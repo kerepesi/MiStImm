@@ -1,15 +1,13 @@
 /**********************************************************************/
-/*MiStImm - Microscopic Stochastic Immun System Simulation Software*/
+/*MiStImm - Microscopic Stochastic Immun System Simulator*/
 
-/*Tamas Szabados with students Tamas Kiss, Kristof Horompoly, Endre Szecsei, Csaba Kerepesi*/
+/*Developed by Tamas Szabados, Csaba Kerepesi, Tamas Kiss, Kristof Horompoly, Endre Szecsei*/
 
-/*Comment: Introducing helper T cells, MHC class II, peptide
-universe, interleukins, B-T interactions, B cell maturation, antibodies.*/
+/*Contact: Csaba Kerepesi, kerepesi@sztaki.hu*/
 /**********************************************************************/
 
-/* Compile in Windows: Dev-C++ 4.9.9.2.*/
-/* Compile in Linux (with gcc 4.4.6): gcc immune2_jul18_2013.c -lm -o immune2_jul18_2013 */
-
+/* Compiled in Windows: Dev-C++ 5.11*/
+/* Compiled in Linux (with gcc 5.4.0): gcc MiStImm_marc25_2019.c -lm -o MiStImm_marc25_2019 */
 
 #include <stdio.h>
 #include <math.h>
@@ -1933,7 +1931,7 @@ short countpep(short xx,short yy,float *weig)
 	   		
 		if ((0 <= lr->nr) && (lr->nr < 10))  {
 
-		fprintf(out2,"%s%4d%8.2f\n"," Number of red cells: ",lr->nr,t);
+		fprintf(out2,"%s%4li%8.2f\n"," Number of red cells: ",lr->nr,t);
 					
 		}/*if*/
 
@@ -3616,12 +3614,12 @@ if ((t >= timmst) && (limmunst == 1))
 
  if ((inda=fopen(indas,"r")) == NULL) {perror(indas); exit(1);};
 
- fscanf(inda,"%d%d%d%d%d%d\n",&comptype,&srchtype,&rndtype,&writtype,&outfreq,&lbradius);
- fscanf(inda,"%d%d%d%f%ld%d\n",&screenout,&lrestore,&mediumreprod,&weakr,&nrmax,&nm);
- fscanf(inda,"%f%f%f%d%d%d%d\n",&timmst,&tbirth,&tmax,&xmax,&nsubint,&r0,&r0s);
- fscanf(inda,"%d%d%f%f%f%d\n",&rcell,&rblgr,&tlifeb0,&tlifmem0,&pmem,&blkill);
- fscanf(inda,"%f%d%f%d%d%f\n",&crnew,&rminnew,&crspread,&rminsprd,&drwidth,&tau_sel_bcell0);
- fscanf(inda,"%d%d%d%d%d%d%d\n",&thrad,&pxmax,&rminth,&rmaxth,&epepx,&epepy,&rminb);
+ fscanf(inda,"%hi%hi%hi%hi%hi%hi\n",&comptype,&srchtype,&rndtype,&writtype,&outfreq,&lbradius);
+ fscanf(inda,"%hi%hi%hi%f%ld%hi\n",&screenout,&lrestore,&mediumreprod,&weakr,&nrmax,&nm);
+ fscanf(inda,"%f%f%f%hi%hi%hi%hi\n",&timmst,&tbirth,&tmax,&xmax,&nsubint,&r0,&r0s);
+ fscanf(inda,"%hi%hi%f%f%f%hi\n",&rcell,&rblgr,&tlifeb0,&tlifmem0,&pmem,&blkill);
+ fscanf(inda,"%f%hi%f%hi%hi%f\n",&crnew,&rminnew,&crspread,&rminsprd,&drwidth,&tau_sel_bcell0);
+ fscanf(inda,"%hi%hi%hi%hi%hi%hi%hi\n",&thrad,&pxmax,&rminth,&rmaxth,&epepx,&epepy,&rminb);
  fscanf(inda,"%f%f%f%f%f%f%f\n",&pmut,&taum0,&taubm0,&taub0,&tauba0,&taubr0,&bcell_tau_stress_control0);
  fscanf(inda,"%f%f%f%f%f%f\n",&taubil0,&taudil0,&tauab0,&taubab0,&taudab0,&tauthm0);
  fscanf(inda,"%f%f%f%f%f%f\n",&tauthymus0,&thccthn1,&tauth0,&etaccthn1,&tauthr0,&tlifeth0);
@@ -3636,7 +3634,7 @@ if ((t >= timmst) && (limmunst == 1))
  fscanf(inda,"%f%f%f%f%f\n",&etadth,&etailth,&etanmth,&tcell_tcrit_il1,&tcell_tau_stress_control0);
  fscanf(inda,"%f%f%f%f%f%f\n",&kth0,&kth1,&kth2,&kb0,&kb1,&kb2);
  
- fscanf(inda,"%d%d\n",&nwtypes,&nrtypes);
+ fscanf(inda,"%hi%hi\n",&nwtypes,&nrtypes);
 
  /*storing the empty MHC II among the white*/
 
@@ -3682,7 +3680,7 @@ if ((t >= timmst) && (limmunst == 1))
   pwold->pnw=pw;
   pwold=pw;
 
-   fscanf(inda,"%ld%d%d%d%d%f%f%f%f\n",&(pw->nw),&(pw->xw),&(pw->yw),
+   fscanf(inda,"%ld%hi%hi%hi%hi%f%f%f%f\n",&(pw->nw),&(pw->xw),&(pw->yw),
                &(pw->wpepx),&(pw->wpepy),&(pw->t0w),&(pw->tauw0),&(pw->thnw),
                &(pw->etanw));
    pw->nwkilled=0;
@@ -3721,7 +3719,7 @@ if ((t >= timmst) && (limmunst == 1))
    prold=pr;
   }
 
-   fscanf(inda,"%ld%d%d%d%d%f%f%f%f\n",&(pr->nr),&(pr->xr),&(pr->yr),
+   fscanf(inda,"%ld%hi%hi%hi%hi%f%f%f%f\n",&(pr->nr),&(pr->xr),&(pr->yr),
                &(pr->rpepx),&(pr->rpepy),&(pr->t0r),&(pr->taur0),&(pr->thnr),
                &(pr->etanr));
    pr->nrkilled=0;
@@ -4070,11 +4068,11 @@ int main( long argc, char *argv[] )
 
 	
 		
- sprintf(buffer1, "outdat-%d-%d", time(NULL), rndtype);		/* unique file name */
+ sprintf(buffer1, "outdat-%li-%d", time(NULL), rndtype);		/* unique file name */
 		
  outds = buffer1;
 
- sprintf(buffer2, "out2-%d-%d", time(NULL), rndtype);		/* unique file name */
+ sprintf(buffer2, "out2-%li-%d", time(NULL), rndtype);		/* unique file name */
 		
  out2s = buffer2;
  
