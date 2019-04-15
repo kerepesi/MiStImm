@@ -17,6 +17,11 @@
 - How to cite: If you publish anything using MiStimm, you are asked to cite the following publication:
 - T. Szabados, G. Tusnády, C. Kerepesi, T. Bakács: "A microscopic stochastic model of the adaptive humoral immune development process", arxiV preprint, arXiv: 1507.00950, 2015.
 
+***Downloading***
+
+- Download link https://github.com/kerepesi/MiStImm/archive/master.zip
+- Unzip the files
+
 ***Short introduction: the main parts***
 
 1. MiStImm_marc25_2019.c: A C program and an exe file for simulating the microscopic stochastic model of the humoral immune development.
@@ -31,9 +36,10 @@
 
 *** Quick start for Windows step by step ***
 
-1. Run MiStImm_marc25_2019.exe
+0. Download MiStImm (https://github.com/kerepesi/MiStImm/archive/master.zip), unzip, and enter the main folder 
+1. Run MiStImm_marc25_2019.exe (when it finished it will generate a file with the prefix "outdat")
 2. Run indrawc_jul23_2016.exe
-3. Choose an outdat-<number> file from the opened menu by typing its number, for example: "3".
+3. Choose the number of the newly generated outdat file (outdat-<number>-1956), for example: "7".
 4. Choose background color (w/b). For example "b" (black). 
 5. For the time diagram in a bird's eye view choose the option 1 ("Time diagram") by typing "1" then make the following settings: 
 	- First time instant = 0
@@ -57,7 +63,6 @@
 	- Delay = 10
 	- You may freeze the screen and then start again by pressing the space bar. 
 10. Press "Enter" and then choose the option 3 ("exit")
-
 
 *** Workflow for multiple simulation (running in Windows cmd) ***
 
