@@ -14,8 +14,9 @@
 
 ***How to cite***
 
-- How to cite: If you publish anything using MiStimm, you are asked to cite the following publication:
-- T. Szabados, G. Tusnády, C. Kerepesi, T. Bakács: "A microscopic stochastic model of the adaptive humoral immune development process", arxiV preprint, arXiv: 1507.00950, 2015.
+- Please cite this publication: 
+
+Kerepesi C, Bakács T, Szabados T. "MiStImm: an agent-based simulation tool to study the self-nonself discrimination of the adaptive immune response." Theoretical Biology and Medical Modelling, 16:9 (2019), https://doi.org/10.1186/s12976-019-0105-5
 
 ***Downloading***
 
