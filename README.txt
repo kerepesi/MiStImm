@@ -14,9 +14,11 @@
 
 ***How to cite***
 
-- Please cite this publication: 
+- Please cite the following publication:
 
-Kerepesi C, Bakács T, Szabados T. "MiStImm: an agent-based simulation tool to study the self-nonself discrimination of the adaptive immune response." Theoretical Biology and Medical Modelling, 16:9 (2019), https://doi.org/10.1186/s12976-019-0105-5
+Kerepesi C, Bakács T, Szabados T. 
+"MiStImm: an agent-based simulation tool to study the self-nonself discrimination of the adaptive immune response." 
+Theoretical Biology and Medical Modelling, 16:9 (2019), https://doi.org/10.1186/s12976-019-0105-5
 
 ***Downloading***
 
